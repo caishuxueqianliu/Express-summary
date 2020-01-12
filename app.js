@@ -19,9 +19,10 @@ app.use('/', indexRouter);
 
 
 app.use(session({
+  resave: true,  // 新增
   secret: 'itcast',
   resave: false,
-  saveUninitialized: false // 无论你是否使用 Session ，我都默认直接给你分配一把钥匙
+  saveUninitialized: true // 无论你是否使用 Session ，我都默认直接给你分配一把钥匙
 }))
 
 
