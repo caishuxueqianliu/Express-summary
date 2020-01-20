@@ -5,6 +5,6 @@ var user = {
     update:'UPDATE mydb SET name=?, age=? WHERE id=?',
     delete: 'DELETE FROM mydb WHERE id=?',
     queryById: 'SELECT * FROM mydb WHERE id=?',
-    queryAll: 'SELECT * FROM mydb'
+    queryAll: 'SELECT * FROM users'
 };
 module.exports = user;

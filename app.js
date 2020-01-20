@@ -6,6 +6,10 @@ var logger = require('morgan');
 var session = require('express-session')
 var bodyParser = require('body-parser')
 var indexRouter = require('./routes/index');
+var jwt = require('jsonwebtoken');
+var jwts = require('./token/index');
+
+
 
 var app = express();
 
@@ -17,6 +21,16 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
+//token 生成
+var token=jwts.generateToken({ UserName: 'liuhao' })
+console.log(token)
+
+//token 解析
+
+jwts.verifyToken(token,(datas)=>{
+  console.log(datas)
+})
+
 
 app.use(session({
   secret: 'itcast',
@@ -24,9 +38,19 @@ app.use(session({
   saveUninitialized: false // 无论你是否使用 Session ，我都默认直接给你分配一把钥匙
 }))
 
+app.get('/login',(req,res)=>{
+  res.setHeader("Access-Control-Allow-Origin", "*");
 
+    res.json(token)
+
+
+
+})
 app.get('/captcha', function (req, res) {
+
 	res.setHeader("Access-Control-Allow-Origin", "*");
+  //req.session.token = token;
+  // console.log(req.session.token)
     var captcha = svgCaptcha.create({
     	size:4, //验证码长度
         fontSize:50,
