@@ -4,7 +4,7 @@ var user = {
     insert:'INSERT INTO mydb(id, name, age) VALUES(?,?,?)',
     update:'UPDATE mydb SET name=?, age=? WHERE id=?',
     delete: 'DELETE FROM mydb WHERE id=?',
-    queryById: 'SELECT * FROM mydb WHERE id=?',
-    queryAll: 'SELECT * FROM users'
+    queryById: 'SELECT * FROM user WHERE id=?',
+    queryAll: 'SELECT * FROM user'
 };
 module.exports = user;

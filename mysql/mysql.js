@@ -95,7 +95,54 @@ var userData = {
     //         });
     //     });
     // },
-    queryAll: function(req, res, next) {
+  //   User.findOne({
+  //   email: body.email,
+  //   password: md5(md5(body.password))
+  // }, function (err, user) {
+  //   if (err) {
+  //     // return res.status(500).json({
+  //     //   err_code: 500,
+  //     //   message: err.message
+  //     // })
+  //     return next(err)
+  //   }
+    
+  //   // 如果邮箱和密码匹配，则 user 是查询到的用户对象，否则就是 null
+  //   if (!user) {
+  //     return res.status(200).json({
+  //       err_code: 1,
+  //       message: 'Email or password is invalid.'
+  //     })
+  //   }
+
+  //   // 用户存在，登陆成功，通过 Session 记录登陆状态
+  //   req.session.user = user
+
+  //   res.status(200).json({
+  //     err_code: 0,
+  //     message: 'OK'
+  //   })
+  
+    queryById: function(req, res, next,id,callback) {
+        var id = id;
+        pool.getConnection(function(err, connection) {
+            connection.query(sql.queryById, id, function(err, result) {
+                if (result != '') {
+                    var _result = result;
+                    result = {
+                        result: 'select',
+                        data: _result
+                    }
+                } else {
+                    result = undefined;
+                }
+                callback(result)
+                json(res, result);
+                connection.release();
+            });
+        });
+    },
+    queryAll: function(req, res, next,callback) {
        pool.getConnection(function(err, connection) {
 
             connection.query(sql.queryAll, function(err, result) {
@@ -110,8 +157,9 @@ var userData = {
                  else {
                     result = undefined;
                 }
-               
-                json(res, result);
+              // console.log(result.data)
+              callback(result.data)
+               // json(res, result);
                 connection.release();
             });
 

@@ -33,6 +33,7 @@ var json = function(res, result) {
             msg: '全部查找成功',
             data: result.data
         });
+      
     } else {
         res.json(result);
     }

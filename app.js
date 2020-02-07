@@ -39,7 +39,7 @@ app.use(session({
   saveUninitialized: true // 无论你是否使用 Session ，我都默认直接给你分配一把钥匙
 }))
 
-app.get('/login',(req,res)=>{
+app.get('/token',(req,res)=>{
   res.setHeader("Access-Control-Allow-Origin", "*");
 
     res.json(token)
@@ -54,10 +54,10 @@ app.get('/captcha', function (req, res) {
   // console.log(req.session.token)
     var captcha = svgCaptcha.create({
     	size:4, //验证码长度
-        fontSize:50,
+        fontSize:60,
         width:120,
-        height:34,
-        background:"#cc9966"
+        height:36,
+        background:"violet"
     });
 
     req.session.captcha = captcha.text;    
