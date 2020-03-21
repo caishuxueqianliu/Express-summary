@@ -7,7 +7,7 @@ var svgCaptcha = require('svg-captcha');
 var session = require('express-session')
 var jwt = require('jsonwebtoken');
 var jwts = require('../token/index');
-var formidable = require('../node_modules/formidable');
+
 var path = require('path');
 var fs=require('fs')
 
@@ -18,61 +18,10 @@ router.use(session({
   resave: false,
   saveUninitialized: true // 无论你是否使用 Session ，我都默认直接给你分配一把钥匙
 }))
-router.post('/upload',(req,res)=>{
-
-
- let form = new formidable.IncomingForm();
-    form.uploadDir = "./uploads";
-    form.on('field',(field,value)=>{
-     // console.log(field);
-        //console.log(value);
-    });
-    form.on('file',(name,file)=>{
-       // console.log(name);
-       // console.log(file);
-    });
-    form.on('end',()=>{
-        res.end('upload complete');
-    })
-    form.parse(req,(err,fields,files)=>{
-        //重命名
-        //console.log(req)
-        //console.log(files)
- //console.log(files.file)
-  //console.log(files.file2)
-        //console.log(path.extname(files.file.name))
-
-   let extname = path.extname(files.file.name);
-        let oldpath=__dirname+'/'+files.file.path
-        console.log(oldpath)
-        let newpath = __dirname + '/uploads/' +333+ extname;
-        console.log(newpath)
-        fs.rename(oldpath, newpath,(err)=>{
-
-        });
-
-            
-    });
-
-
-res.send('2')
-})
 
 
 
-router.get('/zip',(req,res)=>{
 
-compressing.zip.compressDir('data/16117', 'data/16117.zip')
-.then(() => {
-    console.log('success');
-})
-.catch(err => {
-    console.error(err);
-});
-
-
-
-})
 
 
 
