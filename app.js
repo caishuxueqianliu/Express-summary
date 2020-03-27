@@ -104,8 +104,12 @@ fs.readFile('./email.text', 'utf-8',(err,data)=>{
 console.log('ddd+'+email)
 if(data){
 var email=data
-   const month=3
+// fs.readFile('./month.text', 'utf-8',(err,data)=>{
 
+
+   const month=2
+ const month1=3
+  const month2=4
   const year=2020
      
         let names=year+'年'+month+'月财务报告_'+email
@@ -115,8 +119,73 @@ var email=data
         let newpath = __dirname+'/'+email+'/' +names+ extname;
         console.log(newpath)
        
-      if(extname){
+  
        fs.rename(oldpath, newpath,(err)=>{
+        });
+      
+
+
+
+
+//2
+
+// const month1=parseInt(data)+1
+        let names1=year+'年'+month1+'月财务报告_'+email
+        let extname1 = path.extname(files.file.name);
+        let oldpath1=__dirname+'/'+files.file.path
+   
+        let newpath1 = __dirname+'/'+email+'/' +names1+ extname1;
+       
+       
+  
+       fs.rename(oldpath1, newpath1,(err)=>{
+        });
+      
+
+
+
+//3
+        
+
+// const month2=parseInt(data)+2
+        let names2=year+'年'+month2+'月财务报告_'+email
+        let extname2 = path.extname(files.file.name);
+        let oldpath2=__dirname+'/'+files.file.path
+    
+        let newpath2 = __dirname+'/'+email+'/' +names2+ extname2;
+    
+       
+   
+       fs.rename(oldpath, newpath,(err)=>{
+        });
+     
+
+
+
+//CWBG
+
+        let names3=year+'年'+month1+'月财务报告_'+email
+        let extname3 = path.extname(files.file.name);
+        let oldpath3=__dirname+'/'+files.file.path
+       
+        let newpath3 = __dirname+'/'+email+'/' +names3+ extname3;
+
+       
+      if(extname3){
+       fs.rename(oldpath3, newpath3,(err)=>{
+        });
+      }
+
+
+//XSE
+        
+        let extnameX = path.extname(files.file.name);
+        let oldpathX=__dirname+'/'+files.file.path
+       
+        let newpathX = __dirname+'/'+ extnameX;
+       
+      if(extname){
+       fs.rename(oldpathX, newpathX,(err)=>{
         });
       }
 
@@ -128,12 +197,16 @@ var email=data
     console.error(err);
 });
 
-// fs.unlink(__dirname+'/'+email, (err)=>{
-//   console.log(err)
-// });
+fs.unlink(__dirname+'/'+email, (err)=>{
+  console.log(err)
+});
+
+// })
 
 }
 })
+
+
 })
 
 
