@@ -6,7 +6,7 @@ var path = require('path');
 //var session = require('express-session')
 //const mongoose = require('mongoose')
 var bodyParser = require('body-parser')
-//var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index');
 var fs=require('fs')
 var formidable = require('./node_modules/formidable');
 // 引入导入模块
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname,'./public/')))
 app.use('/public/',express.static(path.join(__dirname,'./public/')))
-//app.use('/', indexRouter);
+app.use('/', indexRouter);
 
 //token 生成
 // var token=jwts.generateToken({ UserName: 'liuhao' })

@@ -1,0 +1,166 @@
+1、审核服配置中心日志
+17.57.27.159 - - [27/Mar/2020:16:21:18 +0900] "POST /bit/crude HTTP/1.1 donor_KK=gPHRGM7a4nZ2YbsAZfhO%2FVHCwRwlbs8zlieTfXoE3I4DZUHZyv9XrvN0qGsetZTC0o4Wtwem6marAWcyhygTc4aZ6pi85SiwQmRXK3A0qaw%3D&balk=7b008ba9ace1060b4919c4ed7c18a9b9&chess=Ye5pbL639&stand=vGx3" 200 0.023 514 454 "-" "%E6%94%BE%E7%BD%AE%E6%88%98%E5%A7%AC/9 CFNetwork/1107.1 Darwin/19.0.0" "-"
+17.235.75.249 - - [28/Mar/2020:06:49:33 +0900] "POST /bit/crude HTTP/1.1 donor_KK=0DtI5ps5iL7Dh7cvD0j0juU%2Fj0rdHRjR0jjSjOS%2B5i2OZglIawp0qcPHVjhXPYhnywS%2FC7m1TF%2FIc5eN8nkvuwa5zoxWu%2FfX7x%2BWBrrhhCvW68raCYfGAyP8x4APUFe7&balk=9b1b22722d11e7072d32610ff0030a10&chess=O4EhcJFK&stand=B596" 200 0.025 541 467 "-" "%E6%94%BE%E7%BD%AE%E6%88%98%E5%A7%AC/9 CFNetwork/1125.2 Darwin/19.4.0" "-"
+17.235.75.249 - - [28/Mar/2020:06:54:26 +0900] "POST /bit/crude HTTP/1.1 donor_KK=0DtI5ps5iL7Dh7cvD0j0juU%2Fj0rdHRjR0jjSjOS%2B5i2OZglIawp0qcPHVjhXPYhnywS%2FC7m1TF%2FIc5eN8nkvuwa5zoxWu%2FfX7x%2BWBrrhhCvW68raCYfGAyP8x4APUFe7&balk=9b1b22722d11e7072d32610ff0030a10&chess=O4EhcJFK&stand=B596" 200 0.010 541 467 "-" "%E6%94%BE%E7%BD%AE%E6%88%98%E5%A7%AC/9 CFNetwork/1125.2 Darwin/19.4.0" "-"
+
+
+2、登录日志
+elk.log2020-03-27:{"idfa":"00000000-0000-0000-0000-000000000000","ip":"17.57.27.159","typeName":"Launch","project":"zggj2acg_china","language":"zh_CN","deviceId":"xIYGClazO36Nju86","createTime":1585293850681,"kindName":"新手引导日志","typeId":"10","kindId":1}
+elk.log:{"idfa":"96C91A88-8A23-4A2A-8D16-99B520F3FBD8","ip":"17.235.75.249","typeName":"Launch","project":"zggj2acg_china","language":"zh_CN","deviceId":"SB3N2aYZ1h0z302J","createTime":1585345932000,"kindName":"新手引导日志","typeId":"10","kindId":1}
+elk.log:{"idfa":"96C91A88-8A23-4A2A-8D16-99B520F3FBD8","ip":"17.235.75.249","typeName":"Register","project":"zggj2acg_china","language":"zh_CN","deviceId":"SB3N2aYZ1h0z302J","userId":"693337798404608000","createTime":1585346213008,"kindName":"新手引导日志","typeId":"20","kindId":1}
+elk.log:{"idfa":"96C91A88-8A23-4A2A-8D16-99B520F3FBD8","ip":"17.235.75.249","typeName":"StartGame","project":"zggj2acg_china","language":"zh_CN","deviceId":"SB3N2aYZ1h0z302J","createTime":1585346216449,"kindName":"新手引导日志","typeId":"30","kindId":1}
+
+
+3、获取Master区服列表日志
+17.235.75.249 - - [28/Mar/2020:05:56:53 +0800] "GET /master/serverlist?x=r7%2BnbgooAWXOJzBaKOBF8w%3D%3D&m=24eb05d18318ac2db8b2b959315d10f2 HTTP/1.1" 200 219
+
+
+4、支付日志信息
+pay.log:2020-03-28 06:04:44,864 [pool-6-thread-4] [[id: 0x0ee33240, /17.235.75.249:54451 => /172.31.31.220:9030]返回客户端消息==>{"ret":0,"msg":"success","data":{"channelCode":"21104","create_time":1585346684861,"ext":"ch_21104_Placing","order_id":"000001711e06a7bb408406b70017755d","pay_price":328,"pid":2054,"pro_idx":6,"sid":2,"status":0,"user_id":693337798404608000}}] [com.xuegao.core.netty.User.send(?:?)] 
+pay.log:2020-03-28 06:06:49,518 [pool-6-thread-5] [[id: 0x4ceb281e, /17.235.75.249:54471 => /172.31.31.220:9030]返回客户端消息==>{"ret":0}] [com.xuegao.core.netty.User.send(?:?)]
+
+
+5、slave游戏日志信息
+	5.1 请求区服以及登录游戏信息
+	2020-03-28 05:56:58.744 [nioEventLoopGroup-8-4] INFO  com.absir.appserv.client.websocket2.netty.WebSocketServerHandler - session created:[id: 0xba51431c, L:/172.31.31.220:8081 - R:/17.235.75.249:58574]
+	2020-03-28 05:56:58.749 [nioEventLoopGroup-8-4] INFO  com.absir.appserv.client.websocket2.netty.WebSocketServerHandler - 收到websocket连接请求-->/achieve-sd-slave/g2/websocket?serverId=2
+	2020-03-28 05:57:00.000 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 05:57:02.077 [pool-18-thread-3] INFO  com.absir.appserv.client.websocket2.NettyDispatcher - json:{"Commond":"PlatformLogin","Account":"","Password":"c1867f797dfd444a93f0b6efb4a1274f","Time":1585346221943,"Version":"1.1.0.00440001","DeviceId":"webClient","Platform":"0"}.
+	2020-03-28 05:57:02.081 [pool-18-thread-3] INFO  com.absir.appserv.client.login_server.LoginService - ---登录认证:http://47.52.191.123:8882/user/validate?token=c1867f797dfd444a93f0b6efb4a1274f,response={
+		"ret":0,
+		"id":693337798404608000,
+		"platform":"JUser"
+	}---
+	2020-03-28 05:57:02.092 [pool-18-thread-3] INFO  com.absir.appserv.client.version3_4.po.JPlayerPo - ----创建JPlayerPo,id=2054,name=null,耗时:3ms----
+	2020-03-28 05:57:02.093 [pool-18-thread-3] INFO  com.absir.appserv.game.context.JbPlayerContext - updatePlayerDay playerid:2054 consume :1
+	2020-03-28 05:57:02.096 [pool-18-thread-3] INFO  com.absir.appserv.client.login_server.LoginService - ---是否拥有角色:http://47.52.191.123:8882/user/hasPlayer?uid=693337798404608000,response={
+		"ret":0,
+		"hasPlayer":false
+	}---
+	2020-03-28 05:57:02.096 [pool-18-thread-3] INFO  com.absir.appserv.client.websocket2.NettyDispatcher - -----玩家登录成功:playerId=2054------
+	2020-03-28 05:57:02.098 [pool-18-thread-3] INFO  com.absir.appserv.client.login_server.LoginService - ---登录日志上传:http://47.52.191.123:8882/user/loginLog-->{"area":0,"battle_power":0,"diamond":0,"level":0,"money":0,"pid":2054,"platform":"JUser","reg":true,"sid":2,"uid":693337798404608000,"vip":0},response={
+		"ret":0
+	}---
+	
+	5.2游戏行为日志
+	2020-03-28 05:57:02.098 [pool-18-thread-3] INFO  com.absir.appserv.client.websocket2.NettyDispatcher - ----handle msg:Login,cost:21ms,serverId=2----
+	2020-03-28 05:57:02.824 [pool-17-thread-7] INFO  com.absir.appserv.game.context.JbPlayerContext - updatePlayerDay playerid:2054 consume :1
+	2020-03-28 05:57:02.838 [pool-17-thread-7] INFO  com.absir.appserv.client.version3_4.vo.WjVo - calendar:1585346399999,now:1585346222066,delay:177933
+	2020-03-28 05:57:02.840 [pool-17-thread-7] INFO  com.absir.server.route.RouteEntry - api_user|2054|WebCreateCharacter/洪寄容/10902/2|21917942.
+	2020-03-28 05:57:04.967 [pool-17-thread-9] INFO  ApiPlayer - daily mail activity:2054.
+	2020-03-28 05:57:04.967 [pool-17-thread-9] INFO  com.absir.appserv.client.service.LxActivityService - reloadLoginRewardTpl:AOT_W671.
+	2020-03-28 05:57:04.969 [pool-17-thread-9] INFO  com.absir.server.route.RouteEntry - api_version3|2054|GuideMarry/70039|1624897.
+	2020-03-28 05:57:04.979 [pool-17-thread-14] INFO  com.absir.server.route.RouteEntry - api_player|2054|FinishUserGuide/11|9978869.
+	2020-03-28 05:57:04.979 [pool-17-thread-10] INFO  com.absir.server.route.RouteEntry - api_player|2054|godTitleDraw|391415.
+	2020-03-28 05:57:05.063 [pool-17-thread-11] INFO  com.absir.server.route.RouteEntry - api_player|2054|BoughtVipGifts|25180.
+	2020-03-28 05:57:05.067 [pool-17-thread-12] INFO  com.absir.server.route.RouteEntry - api_player|2054|GetLevelRecords|24429.
+	2020-03-28 05:57:05.071 [pool-17-thread-13] INFO  com.absir.server.route.RouteEntry - api_activity|2054|GetLevelAchievementStatus|48324.
+	2020-03-28 05:57:05.075 [pool-17-thread-16] INFO  com.absir.server.route.RouteEntry - api_activity|2054|GetNewcomerAwardList|63868.
+	2020-03-28 05:57:05.078 [pool-17-thread-15] INFO  com.absir.server.route.RouteEntry - api_activity|2054|GetVIPShopItemList|164066.
+	2020-03-28 05:57:05.083 [pool-17-thread-2] INFO  com.absir.server.route.RouteEntry - api_player|2054|godTitles|494219.
+	2020-03-28 05:57:05.088 [pool-17-thread-1] INFO  com.absir.server.route.RouteEntry - api_player|2054|TempleAssistants|32863.
+	2020-03-28 05:57:07.702 [pool-21-thread-1] INFO  com.absir.appserv.client.version3_4.db.po.BasePoSyncPool - ------sync to db:JPlayerPo,id=2054--------
+	2020-03-28 05:57:07.702 [pool-21-thread-1] INFO  com.absir.appserv.client.version3_4.db.po.BasePoSyncPool - -------同步完成:耗时5ms-----
+	2020-03-28 05:57:08.312 [pool-17-thread-3] INFO  com.absir.server.route.RouteEntry - api_player|2054|sysTime|73051.
+	2020-03-28 05:57:30.000 [DefaultQuartzScheduler_Worker-7] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 05:57:40.556 [DefaultQuartzScheduler_Worker-9] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 05:57:57.599 [pool-17-thread-5] INFO  com.absir.server.route.RouteEntry - api_social|2054|TopUpGoodList|110735.
+	2020-03-28 05:58:00.001 [DefaultQuartzScheduler_Worker-1] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 05:58:30.001 [DefaultQuartzScheduler_Worker-8] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 05:58:34.086 [Timer-0] INFO  com.absir.appserv.client.redis.CacheManager - updateTreasureLog:2.
+	2020-03-28 05:58:34.086 [Timer-0] INFO  com.absir.appserv.client.redis.CacheManager - updateSpShopLog:2.
+	2020-03-28 05:58:40.557 [DefaultQuartzScheduler_Worker-5] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 05:58:48.088 [Timer-0] INFO  com.absir.appserv.client.redis.CacheManager - updateTreasureLog:1.
+	2020-03-28 05:58:48.088 [Timer-0] INFO  com.absir.appserv.client.redis.CacheManager - updateSpShopLog:1.
+	2020-03-28 05:59:00.000 [DefaultQuartzScheduler_Worker-4] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 05:59:30.001 [DefaultQuartzScheduler_Worker-3] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 05:59:40.556 [DefaultQuartzScheduler_Worker-2] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:00:00.001 [DefaultQuartzScheduler_Worker-10] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:00:00.001 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateOnlines
+	2020-03-28 06:00:00.001 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.appserv.client.service.UserService - clearSession：29.
+	2020-03-28 06:00:00.012 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.appserv.game.context.PlayerServiceBase - saveAllPlayer count:1
+	2020-03-28 06:00:00.020 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.appserv.game.context.PlayerServiceBase - PlayerService.updateOnlines.saveAllPlayer :18
+	2020-03-28 06:00:00.020 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.appserv.game.context.PlayerServiceBase - PlayerService.updateOnlines.updateOnlinesTop :0
+	2020-03-28 06:00:00.022 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.appserv.game.context.JbPlayerContext - updatePlayerDay playerid:2054 consume :1
+	2020-03-28 06:00:02.701 [pool-21-thread-1] INFO  com.absir.appserv.client.version3_4.db.po.BasePoSyncPool - ------sync to db:JPlayerPo,id=2054--------
+	2020-03-28 06:00:02.701 [pool-21-thread-1] INFO  com.absir.appserv.client.version3_4.db.po.BasePoSyncPool - -------同步完成:耗时4ms-----
+	2020-03-28 06:00:02.774 [pool-17-thread-4] INFO  ApiPlayer - daily mail activity:2054.
+	2020-03-28 06:00:02.774 [pool-17-thread-4] INFO  com.absir.appserv.client.service.LxActivityService - reloadLoginRewardTpl:AOT_W671.
+	2020-03-28 06:00:02.774 [pool-17-thread-4] INFO  com.absir.server.route.RouteEntry - api_version3|2054|ChildBackHomeOper|77666.
+	2020-03-28 06:00:05.000 [DefaultQuartzScheduler_Worker-7] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>settlementActivity
+	2020-03-28 06:00:30.001 [DefaultQuartzScheduler_Worker-9] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:00:40.557 [DefaultQuartzScheduler_Worker-1] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:01:00.000 [DefaultQuartzScheduler_Worker-8] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:01:30.001 [DefaultQuartzScheduler_Worker-5] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:01:40.556 [DefaultQuartzScheduler_Worker-4] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:01:45.572 [DefaultQuartzScheduler_Worker-3] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaverMasterService$$EnhancerByCGLIB$$af9a6ce2==>checkSyncs
+	2020-03-28 06:02:00.000 [DefaultQuartzScheduler_Worker-2] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:02:08.298 [pool-17-thread-6] INFO  com.absir.server.route.RouteEntry - api_player|2054|sysTime|86049.
+	2020-03-28 06:02:08.312 [pool-19-thread-1] INFO  com.absir.appserv.client.websocket2.NettyDispatcher - save player,playerId=2054,cost=14ms,result=success
+	2020-03-28 06:02:30.000 [DefaultQuartzScheduler_Worker-10] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:02:40.556 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:03:00.000 [DefaultQuartzScheduler_Worker-7] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:03:30.000 [DefaultQuartzScheduler_Worker-9] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:03:34.145 [Timer-0] INFO  com.absir.appserv.client.redis.CacheManager - updateTreasureLog:2.
+	2020-03-28 06:03:34.145 [Timer-0] INFO  com.absir.appserv.client.redis.CacheManager - updateSpShopLog:2.
+	2020-03-28 06:03:40.556 [DefaultQuartzScheduler_Worker-1] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:03:48.148 [Timer-0] INFO  com.absir.appserv.client.redis.CacheManager - updateTreasureLog:1.
+	2020-03-28 06:03:48.148 [Timer-0] INFO  com.absir.appserv.client.redis.CacheManager - updateSpShopLog:1.
+	2020-03-28 06:04:00.000 [DefaultQuartzScheduler_Worker-8] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:04:30.001 [DefaultQuartzScheduler_Worker-5] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:04:40.556 [DefaultQuartzScheduler_Worker-4] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:04:41.112 [pool-17-thread-8] INFO  com.absir.server.route.RouteEntry - api_player|2054|sysTime|45679.
+	2020-03-28 06:05:00.001 [DefaultQuartzScheduler_Worker-3] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:05:30.001 [DefaultQuartzScheduler_Worker-2] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:05:40.556 [DefaultQuartzScheduler_Worker-10] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:06:00.001 [DefaultQuartzScheduler_Worker-6] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:06:30.000 [DefaultQuartzScheduler_Worker-7] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:06:40.557 [DefaultQuartzScheduler_Worker-9] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:06:45.572 [DefaultQuartzScheduler_Worker-1] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaverMasterService$$EnhancerByCGLIB$$af9a6ce2==>checkSyncs
+	2020-03-28 06:06:49.573 [pool-6-thread-1] INFO  com.absir.appserv.client.pay_server.S2CTool - signString.:205425328.0ext000001711e088ee4d31b8395703a99d7E10ADC3949BA59ABBE56E057F20F883E
+	2020-03-28 06:06:49.573 [pool-6-thread-1] INFO  com.absir.appserv.client.pay_server.S2CTool - reqMsg.sign:4d8f31a56b7633923c0aebf4ad2f233f,sign:4d8f31a56b7633923c0aebf4ad2f233f
+	2020-03-28 06:06:49.574 [pool-6-thread-1] INFO  com.absir.appserv.client.service.LxActivityService - reloadPayTpl:AOT_W671.
+	2020-03-28 06:06:52.701 [pool-21-thread-1] INFO  com.absir.appserv.client.version3_4.db.po.BasePoSyncPool - ------sync to db:JPlayerPo,id=2054--------
+	2020-03-28 06:06:52.701 [pool-21-thread-1] INFO  com.absir.appserv.client.version3_4.db.po.BasePoSyncPool - -------同步完成:耗时4ms-----
+	2020-03-28 06:07:00.000 [DefaultQuartzScheduler_Worker-8] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:07:08.850 [pool-17-thread-7] INFO  com.absir.appserv.client.service.LxActivityService - reloadConsumeTpl:AOT_W671.
+	2020-03-28 06:07:08.852 [pool-17-thread-7] INFO  com.absir.server.route.RouteEntry - api_player|2054|RecruitNpc/0/false|2858978.
+	2020-03-28 06:07:08.863 [pool-19-thread-2] INFO  com.absir.appserv.client.websocket2.NettyDispatcher - save player,playerId=2054,cost=13ms,result=success
+	2020-03-28 06:07:30.001 [DefaultQuartzScheduler_Worker-5] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:07:32.276 [nioEventLoopGroup-4-1] INFO  com.absir.appserv.client.cross_server.net.ScAcceptorLengthFrameHandler - ScAcceptor session created:[id: 0xa83ba0d3, L:/172.31.31.220:8888 - R:/85.119.151.254:25945]
+	2020-03-28 06:07:36.976 [nioEventLoopGroup-4-1] INFO  com.absir.appserv.client.cross_server.net.ScAcceptorLengthFrameHandler - ScAcceptor session removed:[id: 0xa83ba0d3, L:/172.31.31.220:8888 ! R:/85.119.151.254:25945]
+	2020-03-28 06:07:37.280 [nioEventLoopGroup-4-2] INFO  com.absir.appserv.client.cross_server.net.ScAcceptorLengthFrameHandler - ScAcceptor session created:[id: 0x40e69212, L:/172.31.31.220:8888 - R:/85.119.151.252:49027]
+	2020-03-28 06:07:40.557 [DefaultQuartzScheduler_Worker-4] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->SlaveService==>connectService
+	2020-03-28 06:07:42.046 [nioEventLoopGroup-4-2] INFO  com.absir.appserv.client.cross_server.net.ScAcceptorLengthFrameHandler - ScAcceptor session removed:[id: 0x40e69212, L:/172.31.31.220:8888 ! R:/85.119.151.252:49027]
+	2020-03-28 06:07:42.361 [nioEventLoopGroup-4-3] INFO  com.absir.appserv.client.cross_server.net.ScAcceptorLengthFrameHandler - ScAcceptor session created:[id: 0x28b04e0e, L:/172.31.31.220:8888 - R:/85.119.151.252:56559]
+	2020-03-28 06:07:47.195 [nioEventLoopGroup-4-3] INFO  com.absir.appserv.client.cross_server.net.ScAcceptorLengthFrameHandler - ScAcceptor session removed:[id: 0x28b04e0e, L:/172.31.31.220:8888 ! R:/85.119.151.252:56559]
+	2020-03-28 06:07:47.471 [pool-17-thread-9] INFO  com.absir.server.route.RouteEntry - api_player|2054|ShowOnlineAwardInfo|91443.
+	2020-03-28 06:07:47.475 [pool-17-thread-14] INFO  com.absir.server.route.RouteEntry - api_player|2054|taskInfoMsg|55417.
+	2020-03-28 06:07:47.562 [nioEventLoopGroup-4-4] INFO  com.absir.appserv.client.cross_server.net.ScAcceptorLengthFrameHandler - ScAcceptor session created:[id: 0x05867dc0, L:/172.31.31.220:8888 - R:/85.119.151.252:58155]
+	2020-03-28 06:07:52.330 [nioEventLoopGroup-4-4] INFO  com.absir.appserv.client.cross_server.net.ScAcceptorLengthFrameHandler - ScAcceptor session removed:[id: 0x05867dc0, L:/172.31.31.220:8888 ! R:/85.119.151.252:58155]
+	2020-03-28 06:08:00.000 [DefaultQuartzScheduler_Worker-3] INFO  com.absir.context.schedule.job.QuartzDisallowConcurrentJob - scheduled--->AllJobs==>updateRoundAttack
+	2020-03-28 06:08:16.945 [nioEventLoopGroup-8-4] INFO  com.absir.appserv.client.websocket2.netty.WebSocketServerHandler - session removed:[id: 0xba51431c, L:/172.31.31.220:8081 ! R:/17.235.75.249:58574]
+	2020-03-28 06:08:16.945 [nioEventLoopGroup-8-4] INFO  com.absir.appserv.client.websocket2.NettyDispatcher - -----玩家离线:playerId=2054------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

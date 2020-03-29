@@ -8,6 +8,7 @@ var session = require('express-session')
 //var jwt = require('jsonwebtoken');
 //var jwts = require('../token/index');
 
+var formidable = require('../node_modules/formidable');
 var path = require('path');
 var fs=require('fs')
 
@@ -20,7 +21,38 @@ router.use(session({
 }))
 
 
+router.post('/dlxx',(req,res)=>{
 
+    var form = new formidable.IncomingForm();
+    form.uploadDir = './routes/uploads';
+
+    
+    form.parse(req,(err,fields,files)=>{
+//console.log(files.file)
+  
+if(files.file){
+let extname = path.extname(files.file.name);
+        let oldpath=files.file.path     
+        let newpath ='routes/dlxx/' + files.file.name
+        console.log(oldpath)
+        console.log(newpath)
+   //fs.renameSync(oldpaths, newpaths);
+ fs.renameSync(oldpath,newpath)
+
+var dlxx= fs.readFileSync(newpath,'utf-8');
+
+   
+
+
+      }
+     //  console.log(dlxx)
+   //  res.json({data:dlxx})
+  res.send({ data: "上传成功！" });
+    })
+
+
+
+})
 
 
 
