@@ -41,7 +41,25 @@ let extname = path.extname(files.file.name);
 
 var dlxx= fs.readFileSync(newpath,'utf-8');
 
-   
+var start1=dlxx.indexOf(`{"idfa"`)//起始
+console.log(start1)
+var start2=dlxx.indexOf(`"kindId":1}`)//第一個結束
+console.log(start2)
+var end1=dlxx.lastIndexOf(`"kindId":1}`)//結束
+console.log(end1)
+var end2=dlxx.lastIndexOf(`{"idfa"`)//倒數第一個開始
+console.log(end2)
+
+
+var dlxxjq=dlxx.slice(start1,end1)
+console.log(dlxxjq)
+var jq1=dlxx.slice(start1,start2)
+console.log(jq1)
+
+
+var jqn=dlxx.slice(end2,end1)
+console.log(jqn)
+
 
 
       }
